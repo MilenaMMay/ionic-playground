@@ -16,28 +16,11 @@
  specific language governing permissions and limitations
  under the License.
  */
+//
+// Prefix header for all source files of the 'ionic-playground' target in the 'ionic-playground' project
+//
 
-#import <Foundation/Foundation.h>
-#import <Cordova/CDVPlugin.h>
-
-typedef struct {
-    BOOL iPhone;
-    BOOL iPad;
-    BOOL iPhone5;
-    BOOL iPhone6;
-    BOOL iPhone6Plus;
-    BOOL retina;
-    
-} CDV_iOSDevice;
-
-@interface CDVSplashScreen : CDVPlugin {
-    UIActivityIndicatorView* _activityView;
-    UIImageView* _imageView;
-    NSString* _curImageName;
-    BOOL _visible;
-}
-
-- (void)show:(CDVInvokedUrlCommand*)command;
-- (void)hide:(CDVInvokedUrlCommand*)command;
-
-@end
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+    #import <UIKit/UIKit.h>
+#endif
