@@ -53,27 +53,27 @@ angular.module('app', ['ionic'])
   // Set up the various states which the app can be in.
   // Each state's controller can be found in controllers.js
   $stateProvider
-    
+
     .state('page3', {
       url: '/form',
-      templateUrl: 'page3.html'
+      templateUrl: 'templates/page3.html'
     })
-    
+
     .state('page4', {
       url: '/list',
       templateUrl: 'page4.html'
     })
-    
+
     .state('page8', {
       url: '/search',
       templateUrl: 'page8.html'
     })
-    
+
     .state('page9', {
       url: '/hallo',
       templateUrl: 'page9.html'
     })
-    
+
     .state('page10', {
       url: '/hallo',
       templateUrl: 'page10.html'
@@ -81,9 +81,9 @@ angular.module('app', ['ionic'])
     ;
 
   // if none of the above states are matched, use this as the fallback
-  
+
   $urlRouterProvider.otherwise('/form');
-  
+
 
 });
 
@@ -99,26 +99,6 @@ angular.module('app', ['ionic'])
         <ion-nav-view></ion-nav-view>
     </div>
 </div>
-<script id="page3.html" type="text/ng-template">
-<ion-view title="Beispiel Formular">
-    <ion-content padding="true" class="has-header">
-        <form>
-            <label class="item item-select">
-                <span class="input-label">Ich bin ...</span>
-                <select></select>
-            </label>
-            <ion-toggle toggle-class="toggle-positive">Schick mir Emails</ion-toggle>
-            <ion-checkbox>zum Thema HTML</ion-checkbox>
-            <ion-checkbox>zum Thema CSS</ion-checkbox>
-            <ion-checkbox>zum Thema Javascript</ion-checkbox>
-            <label class="item item-input">
-                <span class="input-label">Email:</span>
-                <input type="email" placeholder="email@example.com">
-            </label>
-            <button class="button button-stable button-block ">Abschicken!</button>
-        </form>
-    </ion-content>
-</ion-view></script>
 <script id="page4.html" type="text/ng-template">
 <ion-view title="Beispiel Liste">
     <ion-content padding="true" class="has-header">
