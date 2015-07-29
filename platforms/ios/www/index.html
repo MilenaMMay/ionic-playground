@@ -21,6 +21,7 @@
     <link href="css/ionic.app.css" rel="stylesheet">
     -->
 
+    <script src="js/controllers.js"></script>
 
     <script>
 // Ionic Starter App
@@ -30,7 +31,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('app', ['ionic'])
+angular.module('app', ['ionic', 'app.controllers'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -66,7 +67,8 @@ angular.module('app', ['ionic'])
 
     .state('search', {
       url: '/search',
-      templateUrl: 'templates/search.html'
+      templateUrl: 'templates/search.html',
+      controller: 'SearchCtrl'
     })
 
     .state('hello', {
@@ -82,7 +84,7 @@ angular.module('app', ['ionic'])
 
   // if none of the above states are matched, use this as the fallback
 
-  $urlRouterProvider.otherwise('/form');
+  $urlRouterProvider.otherwise('/search');
 
 
 });

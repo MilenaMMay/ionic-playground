@@ -1,8 +1,9 @@
-// Den Namen, den Du Deinem Modul hier im Hauptprogramm vergibst ('app'), musst Du auch in der index.html nutzen, um die ng-app zu benennen.
+// Den Namen, den Du Deinem Modul hier im Hauptprogramm vergibst ('appModule'), musst Du auch in der index.html nutzen, um die ng-app zu benennen.
 // So verknüpfst Du das HTML (die Komponenten Deiner App) mit dem Javascript (dem Verhalten Deiner App).
 // Die Liste, die danach übergeben wird, sind weitere Javascript-Module, die Deine App benötigt ("required dependencies", benötigte Abhängigkeiten).
 // * 'ionic' benötigst Du, weil wir dieses Framework (Rahmen) verwenden.
-angular.module('app', ['ionic'])
+// * Mit 'controllersModule' lädst Du das Modul mit dem gleichen Namen, das in controllers.js erzeugt wird.
+angular.module('appModule', ['ionic', 'controllersModule'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -26,27 +27,31 @@ angular.module('app', ['ionic'])
   // Each state's controller can be found in controllers.js
   $stateProvider
 
-    .state('form', {
+    .state('formState', {
       url: '/form',
       templateUrl: 'templates/form.html'
     })
 
-    .state('list', {
+    .state('listState', {
       url: '/list',
       templateUrl: 'templates/list.html'
     })
 
-    .state('search', {
+    .state('searchState', {
       url: '/search',
-      templateUrl: 'templates/search.html'
+      templateUrl: 'templates/search.html',
+      // Indem Du hier den Namen 'SearchCtrl' verwendest, verweist (references) Du auf
+      // den Controller (Steuerung) mit dem gleichen Namen. Diesen findest Du in
+      // controllers.js
+      controller: 'SearchCtrl'
     })
 
-    .state('hello', {
+    .state('helloState', {
       url: '/hello',
       templateUrl: 'templates/hello.html'
     })
 
-    .state('text', {
+    .state('textState', {
       url: '/text',
       templateUrl: 'templates/text.html'
     })
