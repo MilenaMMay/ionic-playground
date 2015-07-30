@@ -1,11 +1,20 @@
 <ion-view title="Hallo">
     <ion-content padding="true" class="has-header">
-        <h1>Willkommen!</h1>
+        <h1>{{greetingVariable}}</h1>
         <div style="line-height: 250px; border: 1px solid rgb(238, 238, 238); border-radius: 3px; text-align: center; width: 100%; height: auto; background-color: rgb(255, 255, 255);">
             <i class="icon ion-image" style="font-size: 64px; color: rgb(136, 136, 136); vertical-align: middle;"></i>
         </div>
         <div>
-            <p>Probier etwas aus!</p>
+            <p>Wie heißt Du?</p>
+            <!-- Die nameVariable nimmt den Wert auf, den der Nutzer in das input (Eingabe) Feld eingibt, wenn
+            ein Submit (Übergabe) stattfindet, also der Nutzer Enter drückt oder den Button drückt.
+            Der Wert in der nameVariable wird dann an die changeGreetingFunction weitergegeben. -->
+            <form ng-submit=changeGreetingFunction(nameVariable)>
+                <label class="item item-input">
+                    <input type="text" ng-model="nameVariable"></input>
+                </label>
+                <button class="button button-stable button-block ">Abschicken!</button>
+            </form>
         </div>
     </ion-content>
 </ion-view>

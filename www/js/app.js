@@ -48,7 +48,8 @@ angular.module('appModule', ['ionic', 'controllersModule'])
 
     .state('helloState', {
       url: '/hello',
-      templateUrl: 'templates/hello.html'
+      templateUrl: 'templates/hello.html',
+      controller: 'HelloCtrl'
     })
 
     .state('textState', {
