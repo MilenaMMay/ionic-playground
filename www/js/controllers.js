@@ -3,8 +3,8 @@ angular.module('controllersModule', [])
 
 // Den Namen 'SearchCtrl' benötigst Du, wenn Du auf diesen Controller (Steuerung) verweisen möchtest.
 .controller('SearchCtrl', function($scope, $state) {
-  // Hier deklarierst (beschreibst) du die Methode "searchMethod", um sie im templates/search.html zu nutzen.
-  $scope.searchMethod = function() {
+  // Hier deklarierst (beschreibst) du die Funktion "searchFunction", um sie im templates/search.html zu nutzen.
+  $scope.searchFunction = function() {
     // Mit diesem Befehl führst Du einen Redirect (Weiterleitung) zum State (Zustand) 'listState' aus.
     $state.go('listState');
   };

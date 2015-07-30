@@ -1,15 +1,15 @@
 <ion-view title="Beispiel Suche">
     <ion-content padding="true" class="has-header">
-        <!-- Mit ng-submit führst Du die angegebene Methode aus. Du kannst alle Methoden ausführen, die in dem Controller
+        <!-- Mit ng-submit führst Du die angegebene Funktion aus. Du kannst alle Funktionen ausführen, die in dem Controller
         angegeben sind, der für diese Seite zuständig ist. Welcher Controller für diese Seite zuständig ist,
         gibst Du in der app.js an. -->
-        <form ng-submit="searchMethod()">
+        <form ng-submit="searchFunction()">
             <label class="item item-input">
                 <i class="icon ion-search placeholder-icon"></i>
                 <input type="search" placeholder="Suche etwas! Z.B. Ionic...">
             </label>
             <!-- Wenn Du ein Formular (form) mit ng-submit baust, brauchst Du auch einen Button mit der
-            Eigenschaft type="submit", der dann die entsprechende Methode ausführt. -->
+            Eigenschaft type="submit", der dann die entsprechende Funktion ausführt. -->
             <button type="submit" class="button button-stable button-block ">Finden!</button>
         </form>
     </ion-content>
