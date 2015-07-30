@@ -10,7 +10,7 @@ angular.module('controllersModule', [])
   };
 })
 
-.controller('HelloCtrl', function($scope, $state) {
+.controller('HelloCtrl', function($scope) {
   // Dieser Code ist nicht in einer Funktion, sondern wird immer ausgeführt, wenn der HelloCtrl
   // aufgerufen wird. Also immer, wenn man auf die Seite /hello kommt, siehe app.js.
   // Indem Du hier die greetingVariable initialisierst (ihr einen Start-Wert gibst),
@@ -24,9 +24,11 @@ angular.module('controllersModule', [])
     // ausgeführt, der nach dem else steht.
     // Mit == überprüft man, ob die Werte auf der linken und rechten Seite gleich sind. Wenn ja, ist die Bedingung wahr (true),
     // wenn nein, ist sie falsch (false).
-    // Mit length (Länge) ermittelst Du die Anzahl Buchstaben einer Eingabe. Wurde kein 'name' Parameter übergeben, soll nur
-    // "Willkommen!" ausgegeben werden, ansonsten soll zu Willkommen noch der Name hinzugefügt werden.
-    if (nameVariable.length == 0) {
+    // undefined bedeutet nicht definiert, also wird überprüft, ob die nameVariable keinen Wert hat.
+    // Mit length (Länge) ermittelst Du die Anzahl Buchstaben einer Eingabe.
+    // Die Zeichen || bedeuten "oder", d.h. heißt also wenn die nameVariable keinen Wert hat oder keine Zeichen beinhaltet,
+    // soll nur "Willkommen!" ausgegeben werden, ansonsten soll zu Willkommen noch der Name hinzugefügt werden.
+    if (nameVariable == undefined || nameVariable.length == 0) {
       $scope.greetingVariable = "Willkommen!";
     } else {
       $scope.greetingVariable = "Willkommen, " + nameVariable + "!";
