@@ -3,7 +3,7 @@
 // Die Liste, die danach übergeben wird, sind weitere Javascript-Module, die Deine App benötigt ("required dependencies", benötigte Abhängigkeiten).
 // * 'ionic' benötigst Du, weil wir dieses Framework (Rahmen) verwenden.
 // * Mit 'controllersModule' lädst Du das Modul mit dem gleichen Namen, das in controllers.js erzeugt wird.
-angular.module('appModule', ['ionic', 'controllersModule'])
+angular.module('appModule', ['ionic', 'controllersModule', 'servicesModule'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {

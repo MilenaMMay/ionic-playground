@@ -10,12 +10,15 @@ angular.module('controllersModule', [])
   };
 })
 
-.controller('HelloCtrl', function($scope) {
+// Indem Du den ImageService übergibst, kannst Du auf seine Funktionen zugreifen
+.controller('HelloCtrl', function($scope, ImageService) {
   // Dieser Code ist nicht in einer Funktion, sondern wird immer ausgeführt, wenn der HelloCtrl
   // aufgerufen wird. Also immer, wenn man auf die Seite /hello kommt, siehe app.js.
   // Indem Du hier die greetingVariable initialisierst (ihr einen Start-Wert gibst),
   // gibt die Seite schon ohne Nutzereingabe "Willkommen!" aus.
   $scope.greetingVariable = "Willkommen!";
+  // Initialisiere die imageVariable mit dem Wert, den die randomImageFunction des ImageService zurückgibt.
+  $scope.imageVariable = ImageService.randomImageFunction();
 
   $scope.changeGreetingFunction = function(nameVariable) {
     // if - else beschreibt eine Bedingung, nach der das Programm entscheiden muss, welchen Code es als nächstes
@@ -33,5 +36,7 @@ angular.module('controllersModule', [])
     } else {
       $scope.greetingVariable = "Willkommen, " + nameVariable + "!";
     }
+    // Wenn die Begrüßung geändert wird, ändere auch das Bild über die imageVariable
+    $scope.imageVariable = ImageService.randomImageFunction();
   };
 });

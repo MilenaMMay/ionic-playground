@@ -1,9 +1,9 @@
 <ion-view title="Hallo">
     <ion-content padding="true" class="has-header">
         <h1>{{greetingVariable}}</h1>
-        <div style="line-height: 250px; border: 1px solid rgb(238, 238, 238); border-radius: 3px; text-align: center; width: 100%; height: auto; background-color: rgb(255, 255, 255);">
-            <i class="icon ion-image" style="font-size: 64px; color: rgb(136, 136, 136); vertical-align: middle;"></i>
-        </div>
+        <!-- Anstatt hier immer nur ein bestimmtes Bild anzuzeigen, wollen wir unterschiedliche Bilder anzeigen.
+        Deshalb benutzen wir die imageVariable, die im HelloCtrl gesetzt wird. -->
+        <img src="{{imageVariable}}"/>
         <div>
             <p>Wie heißt Du?</p>
             <!-- Die nameVariable nimmt den Wert auf, den der Nutzer in das input (Eingabe) Feld eingibt, wenn
